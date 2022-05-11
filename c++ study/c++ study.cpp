@@ -8,69 +8,120 @@ using std::cin;
 using std::endl;
 using std::string;
 
-
-class cat {
+//ì˜ˆì‹œ 1
+class dog {
 	int age;
-	string name;
 public:
-	cat(int age, string name)
-	{
-		this->age = age;
-		this->name = name;
-		cout << "³É-ÇÏ\n";
-	}
-	cat()
-	{
-		age = 1;
-		name = "°í¾çÀÌ";
-	};
-	~cat()
-	{
-		cout << "³É-¹Ù\n";
-	};
-	void setAge(int age)
-	{
-		this->age = age;
-	};
-	void setName(string name)
-	{
-		this->name = name;
-	};
-	int getAge()
-	{
-		return age;
-	};
-	string getName()
-	{
-		return name;
-	};
+	dog(int a = 1);  //ë””í´íŠ¸ ë§¤ê°œë³€ìˆ˜ë¥¼ ê°–ëŠ” ìƒì„±ì
+	~dog();
+	int getage();
+	void setage(int a);
 
 };
 
-
-
-int main(void)
+dog::dog(int a) { age = a; } //ìƒì„±ìì˜ ì •ì˜ë¥¼ í´ë˜ìŠ¤ ë°”ê¹¥ìª½ìœ¼ë¡œ í•¨. ** ì´ë•Œ í•¨ìˆ˜ì™€ ë™ì¼í•˜ê²Œ ì„ ì–¸ì—ë§Œ ë””í´íŠ¸ ê°’ì„ ì¨ì•¼í•¨.
+dog::~dog() {
+	cout << "ì†Œë©¸\n";
+}
+int dog::getage() {
+	return age;
+}
+void dog::setage(int a)
 {
-	cat dobi(5, "dobi"), * pdobi = &dobi, mari(3, "mari");
-	int j, a;
-	string n;
-
-
-	cout << "µ¿Àû ¸Ş¸ğ¸®¿¡ ÀÔ·ÂÇÒ °í¾çÀÌÀÇ ¼ö´Â ¸îÀÔ´Ï±î? - \n";
-	cin >> j;
-
-	cat* pcat = new cat[j]; //°´Ã¼ ¹è¿­À» µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç
-	if (!pdobi) { cout << "µ¿Àû ¸Ş¸ğ¸® ÇÒ´çÀÌ µÇÁö ¾Ê¾Ò½À´Ï´Ù."; exit(1); }
-
-	for (int i = 0; i < j; i++)
-	{
-		cout << i + 1 << "¹øÂ° °í¾çÀÌÀÇ ³ªÀÌ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä. : ";
-		cin >> a;
-		cout << i + 1 << "¹øÂ° °í¾çÀÌÀÇ ³ªÀÌ´Â " << a << "ÀÔ´Ï´Ù.\n";
-		cout << i + 1 << "¹øÂ° °í¾çÀÌÀÇ ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä. : ";
-		cin >> n;
-		cout << i + 1 << "¹øÂ° °í¾çÀÌÀÇ ÀÌ¸§Àº " << n << "ÀÔ´Ï´Ù.\n";
-	}
-	return 0;
+	age = a;
 }
 
+int main()
+{
+	dog meri, happy(5);
+	cout << happy.getage() << "," << meri.getage() << endl;
+}
+
+////ì˜ˆì‹œ 2
+//
+//int gopsem(int i, int j, int k = 1, int l = 1)
+//{
+//	return(i * j * k * l);
+//}
+//
+//int main()
+//{
+//	cout << gopsem(1, 2) << endl;
+//	cout << gopsem(1, 2,3) << endl;
+//	cout << gopsem(1, 2,3,4) << endl;
+//}
+//
+////ì˜ˆì‹œ 3
+//class cat {
+//	int age;
+//	string name;
+//public:
+//	cat(int age, string name)
+//	{
+//		this->age = age;
+//		this->name = name;
+//		cout << name <<"í•˜ì´\n";
+//	}
+//	cat()
+//	{
+//		age = 1;
+//		name = "ê³ ì–‘ì´";
+//	};
+//	~cat()
+//	{
+//		cout << "ëƒ¥-ë°”\n";
+//	};
+//
+//	void cry(int p=1) {
+//		for (int i = 0; i < p; i++)
+//			cout << "í¬ì•™!" << endl;
+//	}//ë””í´íŠ¸ê°’ ì„¤ì •
+//
+//	void setAge(int age)
+//	{
+//		this->age = age;
+//	};
+//	void setName(string name)
+//	{
+//		this->name = name;
+//	};
+//	int getAge()
+//	{
+//		return age;
+//	};
+//	string getName()
+//	{
+//		return name;
+//	};
+//
+//};
+//
+//
+//
+//int main(void)
+//{
+//	cat dobi(5, "dobi"), * pdobi = &dobi, mari(3, "mari");
+//	int j, a;
+//	string n;
+//
+//	dobi.cry();
+//	mari.cry(3);
+//
+//	cout << "ë™ì  ë©”ëª¨ë¦¬ì— ì…ë ¥í•  ê³ ì–‘ì´ì˜ ìˆ˜ëŠ” ëª‡ì…ë‹ˆê¹Œ? - \n";
+//	cin >> j;
+//
+//	cat* pcat = new cat[j]; //ê°ì²´ ë°°ì—´ì„ ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹
+//	if (!pdobi) { cout << "ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ì´ ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤."; exit(1); }
+//
+//	for (int i = 0; i < j; i++)
+//	{
+//		cout << i + 1 << "ë²ˆì§¸ ê³ ì–‘ì´ì˜ ë‚˜ì´ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”. : ";
+//		cin >> a;
+//		cout << i + 1 << "ë²ˆì§¸ ê³ ì–‘ì´ì˜ ë‚˜ì´ëŠ” " << a << "ì…ë‹ˆë‹¤.\n";
+//		cout << i + 1 << "ë²ˆì§¸ ê³ ì–‘ì´ì˜ ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”. : ";
+//		cin >> n;
+//		cout << i + 1 << "ë²ˆì§¸ ê³ ì–‘ì´ì˜ ì´ë¦„ì€ " << n << "ì…ë‹ˆë‹¤.\n";
+//	}
+//	
+//	return 0;
+//}
