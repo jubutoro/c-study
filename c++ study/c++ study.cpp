@@ -8,69 +8,23 @@ using std::cin;
 using std::endl;
 using std::string;
 
-
-class cat {
-	int age;
-	string name;
+class Point {
+	int x, y;
 public:
-	cat(int age, string name)
-	{
-		this->age = age;
-		this->name = name;
-		cout << "냥-하\n";
-	}
-	cat()
-	{
-		age = 1;
-		name = "고양이";
-	};
-	~cat()
-	{
-		cout << "냥-바\n";
-	};
-	void setAge(int age)
-	{
-		this->age = age;
-	};
-	void setName(string name)
-	{
-		this->name = name;
-	};
-	int getAge()
-	{
-		return age;
-	};
-	string getName()
-	{
-		return name;
-	};
-
+	Point() { x = 0; y = 0; }
+	Point(int xx, int yy) { x = xx; y = yy; }
+	operator int() { return x * y; } // Point형 객체가 int형으로 바뀌어야 하면 멤버변수 x와 y를 곱하여 바꾸세요
+	// 리턴값은 원하는대로 변경가능..
 };
 
-
-
-int main(void)
+int main()
 {
-	cat dobi(5, "dobi"), * pdobi = &dobi, mari(3, "mari");
-	int j, a;
-	string n;
+	Point ob1(3, 5), ob2(4, 6);
+	int i = ob1; //ob1이 i에 대입될 수 없으므로 int형 변환함수 호출
+	cout << i << endl;
+	cout << ob2 + 5 << endl; //마찬가지로 형변환 함수 호출
 
-
-	cout << "동적 메모리에 입력할 고양이의 수는 몇입니까? - \n";
-	cin >> j;
-
-	cat* pcat = new cat[j]; //객체 배열을 동적 메모리 할당
-	if (!pdobi) { cout << "동적 메모리 할당이 되지 않았습니다."; exit(1); }
-
-	for (int i = 0; i < j; i++)
-	{
-		cout << i + 1 << "번째 고양이의 나이를 입력해 주세요. : ";
-		cin >> a;
-		cout << i + 1 << "번째 고양이의 나이는 " << a << "입니다.\n";
-		cout << i + 1 << "번째 고양이의 이름을 입력해 주세요. : ";
-		cin >> n;
-		cout << i + 1 << "번째 고양이의 이름은 " << n << "입니다.\n";
-	}
-	return 0;
 }
+
+
 
