@@ -318,7 +318,8 @@ public:
 	}
 	void print() 
 	{
-		cout << "이름 : " << getName() << '\n' << "나이 : " << getAge() << '\n' << "학년 : " << getClass() << '\n' << "학번 : " << getStudentNumber() << endl;
+		cout << "이름 : " << getName() << '\n' << "나이 : " << 
+		getAge() << '\n' << "학년 : " << getClass() << '\n' << "학번 : " << getStudentNumber() << endl;
 	}
 
 	
@@ -349,7 +350,8 @@ public:
 	}
 	void print()
 	{
-		cout << "이름 : " << getName() << '\n' << "나이 : " << getAge() << '\n' << "전공 : " << getmajor() << '\n' << "담당과목 : " << getsubject();
+		cout << "이름 : " << getName() << '\n' << "나이 : " << getAge() << '\n' 
+			<< "전공 : " << getmajor() << '\n' << "담당과목 : " << getsubject();
 	}
 
 };
